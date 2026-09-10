@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="description" content="Anonymous supplementary material with interactive SignGPT qualitative demonstrations.">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="description" content="SignGPT project page with method, experimental results, user study, and interactive qualitative demonstrations.">
 <title>SignGPT: Toward LLM-Mediated Sign Language Interaction through Gloss-Free Translation and Generation</title>
 <style>
 html{scroll-behavior:smooth}
@@ -24,8 +24,6 @@ body{margin:0;background:#f7faf9;color:#102326}
 #signgpt-site .hero{position:relative;overflow:hidden;padding:92px 24px 82px;background:radial-gradient(circle at 78% 20%,rgba(29,172,151,.18),transparent 31%),linear-gradient(135deg,#edf9f6 0%,#f9fcfb 48%,#f2f6ff 100%);border-bottom:1px solid var(--line)}
 #signgpt-site .hero::after{content:"";position:absolute;width:420px;height:420px;right:-135px;bottom:-260px;border:72px solid rgba(8,127,114,.08);border-radius:50%}
 #signgpt-site .hero-inner{position:relative;z-index:1;max-width:1000px;margin:auto;text-align:center}
-#signgpt-site .eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:20px;padding:7px 12px;border:1px solid #b9ddd6;border-radius:99px;background:rgba(255,255,255,.7);color:var(--brand-dark);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-#signgpt-site .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(8,127,114,.12)}
 #signgpt-site h1{margin:0 auto 20px;max-width:1040px;font-size:clamp(38px,5.2vw,62px);line-height:1.06;letter-spacing:-.05em;color:#102326}
 #signgpt-site h1 .gradient{background:linear-gradient(90deg,#087f72,#1768a6);-webkit-background-clip:text;background-clip:text;color:transparent}
 #signgpt-site h1 .task-word{position:relative;isolation:isolate;display:inline-block;letter-spacing:-.035em;animation:title-word-reveal .7s ease both;transition:transform .22s ease,text-shadow .22s ease}
@@ -68,6 +66,60 @@ body{margin:0;background:#f7faf9;color:#102326}
 #signgpt-site .overview-figure img{display:block;width:100%;height:auto;border-radius:12px;background:#fff}
 #signgpt-site .overview-figure figcaption{max-width:940px;margin:14px auto 0;padding:0 10px;color:#5d6f72;font-size:13px;line-height:1.65;text-align:center}
 #signgpt-site .overview-figure figcaption strong{color:#274446}
+#signgpt-site .teaser-figure{margin:24px 0 0;padding-top:22px;border-top:1px solid var(--line)}
+#signgpt-site .teaser-figure img{display:block;width:100%;height:auto;border-radius:13px;background:#fff}
+#signgpt-site .teaser-figure figcaption{max-width:940px;margin:13px auto 0;color:#5d6f72;font-size:13px;line-height:1.65;text-align:center}
+#signgpt-site .teaser-figure figcaption strong{color:#274446}
+#signgpt-site .content-section{padding-top:82px;scroll-margin-top:58px}
+#signgpt-site .content-heading{max-width:900px;margin-bottom:28px}
+#signgpt-site .content-kicker{display:block;margin-bottom:8px;color:var(--brand);font-size:11px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}
+#signgpt-site .content-heading h2{margin:0 0 10px;color:#102326;font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-.035em}
+#signgpt-site .content-heading p{margin:0;color:var(--muted);font-size:15px;line-height:1.75}
+#signgpt-site .contribution-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+#signgpt-site .contribution-card{position:relative;padding:24px 22px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 12px 34px rgba(26,57,55,.06);overflow:hidden}
+#signgpt-site .contribution-card::before{content:attr(data-number);position:absolute;right:15px;top:8px;color:rgba(8,127,114,.09);font-size:62px;font-weight:900;line-height:1}
+#signgpt-site .contribution-card h3{position:relative;margin:0 0 10px;color:#173234;font-size:17px}
+#signgpt-site .contribution-card p{position:relative;margin:0;color:#5a6d70;font-size:14px;line-height:1.72}
+#signgpt-site .method-figure{margin:0;padding:12px 12px 16px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 15px 44px rgba(26,57,55,.07)}
+#signgpt-site .method-figure img{display:block;width:100%;height:auto;border-radius:12px;background:#fff}
+#signgpt-site .method-figure figcaption{max-width:1040px;margin:14px auto 0;padding:0 10px;color:#5d6f72;font-size:13px;line-height:1.65;text-align:center}
+#signgpt-site .method-figure figcaption strong{color:#274446}
+#signgpt-site .stage-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
+#signgpt-site .stage-card{padding:19px 20px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#fff,#f5faf8)}
+#signgpt-site .stage-card span{display:inline-grid;place-items:center;width:30px;height:30px;margin-bottom:11px;border-radius:9px;background:var(--brand-soft);color:var(--brand-dark);font-size:12px;font-weight:900}
+#signgpt-site .stage-card h3{margin:0 0 7px;color:#203a3d;font-size:15px}
+#signgpt-site .stage-card p{margin:0;color:#607275;font-size:13px;line-height:1.65}
+#signgpt-site .results-stack{display:grid;gap:22px}
+#signgpt-site .result-card{padding:22px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 14px 40px rgba(26,57,55,.06)}
+#signgpt-site .result-card h3{margin:0 0 8px;color:#173234;font-size:19px;line-height:1.35}
+#signgpt-site .result-card>p{margin:0 0 16px;color:#607275;font-size:14px;line-height:1.7}
+#signgpt-site .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:13px}
+#signgpt-site .result-table{width:100%;min-width:900px;border-collapse:collapse;font-size:12px;font-variant-numeric:tabular-nums}
+#signgpt-site .result-table.compact{min-width:640px}
+#signgpt-site .result-table th,#signgpt-site .result-table td{padding:10px 9px;border-bottom:1px solid #e6eceb;text-align:center;white-space:nowrap}
+#signgpt-site .result-table th:first-child,#signgpt-site .result-table td:first-child{text-align:left;font-weight:800}
+#signgpt-site .result-table thead th{background:#f2f7f6;color:#40585b;font-weight:850}
+#signgpt-site .result-table thead tr:first-child th{border-bottom:1px solid #cfdcda}
+#signgpt-site .result-table tbody tr:last-child td{border-bottom:0}
+#signgpt-site .result-table tbody tr.ours td{background:#eaf7f3;color:#153f3b;font-weight:750}
+#signgpt-site .result-table strong{color:#075e57;font-weight:900}
+#signgpt-site .table-note{margin:12px 2px 0!important;color:#718184!important;font-size:11px!important;line-height:1.6!important}
+#signgpt-site .study-highlight{padding:26px;border:1px solid #a9d4cc;border-radius:22px;background:linear-gradient(135deg,#f1fbf8,#f7fbff);box-shadow:0 16px 46px rgba(8,127,114,.09)}
+#signgpt-site .study-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:20px}
+#signgpt-site .stat{padding:16px;border:1px solid rgba(8,127,114,.16);border-radius:14px;background:rgba(255,255,255,.78)}
+#signgpt-site .stat strong{display:block;color:var(--brand-dark);font-size:25px;letter-spacing:-.03em}
+#signgpt-site .stat span{display:block;margin-top:3px;color:#647679;font-size:11px;line-height:1.45}
+#signgpt-site .study-copy{margin:17px 0 0;color:#53676a;font-size:14px;line-height:1.75}
+#signgpt-site .survey-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;margin-top:22px}
+#signgpt-site .survey-card{padding:22px;border:1px solid var(--line);border-radius:18px;background:#fff}
+#signgpt-site .survey-card h3{margin:0 0 10px;color:#173234;font-size:17px}
+#signgpt-site .survey-card p{margin:0 0 12px;color:#607275;font-size:13px;line-height:1.7}
+#signgpt-site .survey-card p:last-child{margin-bottom:0}
+#signgpt-site .study-quote{margin:0;padding:17px 18px;border-left:4px solid var(--brand);border-radius:0 12px 12px 0;background:#f2f8f7;color:#40575a;font-size:13px;line-height:1.72}
+#signgpt-site .scale-list{display:grid;gap:12px;margin-top:13px}
+#signgpt-site .scale-item{padding:14px 15px;border:1px solid var(--line);border-radius:13px;background:#fbfdfc}
+#signgpt-site .scale-item strong{display:block;margin-bottom:5px;color:#29484a;font-size:13px}
+#signgpt-site .scale-item span{color:#66787a;font-size:12px;line-height:1.6}
 #signgpt-site .demo-section{padding-top:82px;scroll-margin-top:58px}
 #signgpt-site .section-heading{display:grid;grid-template-columns:72px minmax(0,1fr);gap:22px;margin-bottom:28px;align-items:start}
 #signgpt-site .section-index{display:grid;place-items:center;width:58px;height:58px;border-radius:17px;background:var(--brand);color:#fff;font-size:19px;font-weight:850;box-shadow:0 9px 22px rgba(8,127,114,.18)}
@@ -79,11 +131,6 @@ body{margin:0;background:#f7faf9;color:#102326}
 #signgpt-site .sample-tab{border:1px solid var(--line);background:#fff;color:#536467;border-radius:10px;padding:8px 11px;cursor:pointer;font-size:12px;font-weight:800;transition:.18s ease}
 #signgpt-site .sample-tab:hover{transform:translateY(-1px);border-color:#96c8c0}
 #signgpt-site .sample-tab.active{background:var(--brand);border-color:var(--brand);color:#fff}
-#signgpt-site .sample-tab.failure:not(.active){color:var(--bad);border-color:#efc7ca;background:#fff7f7}
-#signgpt-site .case-badge{display:inline-flex;align-items:center;gap:6px;border-radius:99px;padding:6px 10px;font-size:11px;font-weight:850;white-space:nowrap}
-#signgpt-site .case-badge.success{background:var(--good-bg);color:var(--good)}
-#signgpt-site .case-badge.failure{background:var(--bad-bg);color:var(--bad)}
-#signgpt-site .case-badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
 #signgpt-site .prompt{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;margin:20px;padding:17px 18px;border:1px solid #cfe3df;border-radius:14px;background:linear-gradient(135deg,#f1fbf8,#f7fbff);color:#21383b;line-height:1.6}
 #signgpt-site .prompt-label{margin-top:2px;color:var(--brand-dark);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
 #signgpt-site .video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:0 20px 16px}
@@ -149,8 +196,8 @@ body{margin:0;background:#f7faf9;color:#102326}
 #signgpt-site .pipeline-wrap.stage-1 .pipe-step[data-stage="1"],#signgpt-site .pipeline-wrap.stage-2 .pipe-step[data-stage="2"],#signgpt-site .pipeline-wrap.stage-3 .pipe-step[data-stage="3"]{background:#f0faf7;box-shadow:inset 0 3px 0 var(--brand)}
 #signgpt-site .pipeline-status{margin-left:auto;color:#6b7e80;font-size:12px;font-weight:750}
 #signgpt-site .footer{text-align:center;padding:34px 20px;border-top:1px solid var(--line);color:#849294;font-size:12px;background:#fff}
-@media(max-width:900px){#signgpt-site .slt-layout{grid-template-columns:1fr}#signgpt-site .pipeline-steps{grid-template-columns:1fr;min-height:0}#signgpt-site .pipe-step{border-right:0;border-bottom:1px solid var(--line)}#signgpt-site .pipe-step:last-child{border-bottom:0}#signgpt-site .pipe-step:not(:last-child)::after{content:"↓";top:auto;bottom:-10px;right:calc(50% - 10px)}}
-@media(max-width:720px){#signgpt-site .nav-links{display:none}#signgpt-site .hero{padding:68px 18px 60px}#signgpt-site .shell{padding:0 12px 60px}#signgpt-site .paper-overview{padding-top:54px}#signgpt-site .overview-head{align-items:flex-start;flex-direction:column}#signgpt-site .abstract-card{padding:20px 18px}#signgpt-site .overview-figure{padding:7px 7px 14px}#signgpt-site .demo-section{padding-top:60px}#signgpt-site .section-heading{grid-template-columns:1fr;gap:12px}#signgpt-site .section-index{width:46px;height:46px;border-radius:13px;font-size:16px}#signgpt-site .panel-top{align-items:flex-start;flex-direction:column}#signgpt-site .video-grid{grid-template-columns:1fr;padding:0 12px 12px}#signgpt-site .prompt{margin:12px;grid-template-columns:1fr;gap:4px}#signgpt-site .transport{padding:12px}#signgpt-site .frame-readout{text-align:left}#signgpt-site .gt-source{grid-template-columns:1fr}#signgpt-site .pipeline-lanes{grid-template-columns:1fr}#signgpt-site .branch{display:none}#signgpt-site .pipeline-wrap{padding:12px}}
+@media(max-width:900px){#signgpt-site .contribution-grid,#signgpt-site .stage-grid{grid-template-columns:1fr}#signgpt-site .study-stats{grid-template-columns:repeat(2,1fr)}#signgpt-site .survey-grid{grid-template-columns:1fr}#signgpt-site .slt-layout{grid-template-columns:1fr}#signgpt-site .pipeline-steps{grid-template-columns:1fr;min-height:0}#signgpt-site .pipe-step{border-right:0;border-bottom:1px solid var(--line)}#signgpt-site .pipe-step:last-child{border-bottom:0}#signgpt-site .pipe-step:not(:last-child)::after{content:"↓";top:auto;bottom:-10px;right:calc(50% - 10px)}}
+@media(max-width:720px){#signgpt-site .nav-links{display:none}#signgpt-site .hero{padding:68px 18px 60px}#signgpt-site .shell{padding:0 12px 60px}#signgpt-site .paper-overview{padding-top:54px}#signgpt-site .overview-head{align-items:flex-start;flex-direction:column}#signgpt-site .abstract-card{padding:20px 18px}#signgpt-site .teaser-figure{margin-top:20px;padding-top:18px}#signgpt-site .content-section,#signgpt-site .demo-section{padding-top:60px}#signgpt-site .method-figure{padding:7px 7px 14px}#signgpt-site .result-card,#signgpt-site .study-highlight,#signgpt-site .survey-card{padding:17px}#signgpt-site .study-stats{grid-template-columns:1fr 1fr}#signgpt-site .section-heading{grid-template-columns:1fr;gap:12px}#signgpt-site .section-index{width:46px;height:46px;border-radius:13px;font-size:16px}#signgpt-site .panel-top{align-items:flex-start;flex-direction:column}#signgpt-site .video-grid{grid-template-columns:1fr;padding:0 12px 12px}#signgpt-site .prompt{margin:12px;grid-template-columns:1fr;gap:4px}#signgpt-site .transport{padding:12px}#signgpt-site .frame-readout{text-align:left}#signgpt-site .gt-source{grid-template-columns:1fr}#signgpt-site .pipeline-lanes{grid-template-columns:1fr}#signgpt-site .branch{display:none}#signgpt-site .pipeline-wrap{padding:12px}}
 @keyframes title-word-reveal{from{opacity:0;filter:blur(5px)}to{opacity:1;filter:blur(0)}}
 @media(prefers-reduced-motion:reduce){#signgpt-site *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 </style>
@@ -158,13 +205,12 @@ body{margin:0;background:#f7faf9;color:#102326}
   <nav class="site-nav" aria-label="Main navigation">
     <a class="wordmark" href="#top">Sign<i>GPT</i></a>
     <div class="nav-links">
-      <a href="#overview">Overview</a><a href="#slg">Generation</a><a href="#slt">Translation</a><a href="#slc">Conversation</a>
+      <a href="#overview">Overview</a><a href="#method">Method</a><a href="#results">Results</a><a href="#study">User Study</a><a href="#slg">Demos</a>
     </div>
   </nav>
 
   <header class="hero" id="top">
     <div class="hero-inner">
-      <div class="eyebrow">Anonymous supplementary material</div>
       <h1>SignGPT: Toward LLM-Mediated Sign Language <span class="task-word task-slc-word">Interaction</span> through Gloss-Free <span class="task-word task-slt-word">Translation</span> and <span class="task-word task-slg-word">Generation</span></h1>
       <p class="lead">A unified pose-based framework for bidirectional sign language understanding, generation, and exploratory sign-to-sign interaction.</p>
       <div class="task-pills"><a class="task-slg" href="#slg">SLG · Sign Generation</a><a class="task-slt" href="#slt">SLT · Translation</a><a class="task-slc" href="#slc">SLC · Conversation</a><span class="code-coming" aria-label="Source code will be released later">Code coming soon</span></div>
@@ -173,21 +219,113 @@ body{margin:0;background:#f7faf9;color:#102326}
 
   <div class="shell">
     <section class="paper-overview" id="overview">
-      <div class="overview-head"><div><span class="overview-kicker">About the paper</span><h2>One model for sign language translation, generation, and conversation</h2></div><span class="case-badge success">Pose-based · Gloss-free</span></div>
+      <div class="overview-head"><div><span class="overview-kicker">About the paper</span><h2>One model for sign language translation, generation, and conversation</h2></div></div>
       <article class="abstract-card">
         <h3>Abstract</h3>
         <p>Large language models (LLMs) offer limited support for sign languages, which constrains interaction through signing. We present SignGPT, a unified, pose-based framework for sign language translation and generation, and further explore a sign-to-sign conversational response pipeline. SignGPT couples hierarchical representations of body, hand, and facial motion with a shared language model that produces both text and motion without relying on gloss annotations. Asymmetric multi-token prediction and progressive training together enable bidirectional, multitask interaction. We evaluate SignGPT on How2Sign (American Sign Language, ASL) and PHOENIX14T (German Sign Language, DGS) through quantitative and qualitative analyses as well as ablation studies. An exploratory study with 12 Deaf ASL signers provides descriptive ratings of response appropriateness and motion smoothness. Our findings surface both the opportunities and the limitations of pose-based, LLM-mediated sign language interaction, and provide a foundation for developing and studying conversational interfaces that support sign languages.</p>
+        <figure class="teaser-figure">
+          <img src="signgpt-overview.png" width="1652" height="577" loading="eager" alt="SignGPT translation, generation, and one-turn sign-to-sign response pipeline">
+          <figcaption><strong>SignGPT overview.</strong> SignGPT unifies sign-to-text translation and text-to-sign generation in a single model, and we further demonstrate how these complementary capabilities enable a sign-to-sign response pipeline.</figcaption>
+        </figure>
       </article>
-      <figure class="overview-figure">
-        <img src="signgpt-overview.png" width="1652" height="577" loading="eager" alt="Overview of SignGPT for sign language generation, translation, and conversation">
-        <figcaption><strong>SignGPT overview.</strong> SignGPT unifies sign-to-text translation and text-to-sign generation in a single model, and we further demonstrate how these complementary capabilities enable a sign-to-sign response pipeline.</figcaption>
+    </section>
+
+    <section class="content-section" id="contributions">
+      <div class="content-heading"><span class="content-kicker">Contributions</span><h2>Connecting representation, bidirectional modeling, and interaction</h2><p>SignGPT is designed and evaluated as a unified framework rather than as isolated translation and generation systems.</p></div>
+      <div class="contribution-grid">
+        <article class="contribution-card" data-number="01"><h3>Unified sign-text modeling</h3><p>We present SignGPT, a unified pose-based framework that connects gloss-free sign-to-text translation and text-to-sign generation through part-aware motion quantization, shared hidden states, and heterogeneous prediction heads.</p></article>
+        <article class="contribution-card" data-number="02"><h3>Benchmarks and ablations</h3><p>We provide benchmark comparisons and component ablations on ASL and DGS datasets, separately evaluating motion reconstruction quality and task-level translation and generation performance.</p></article>
+        <article class="contribution-card" data-number="03"><h3>Exploratory interaction study</h3><p>We construct an exploratory LLM-mediated sign-to-sign response pipeline and examine raters' perceptions of response appropriateness and motion smoothness, characterizing its opportunities and current limitations.</p></article>
+      </div>
+    </section>
+
+    <section class="content-section" id="method">
+      <div class="content-heading"><span class="content-kicker">Method</span><h2>Three-stage progressive training</h2><p>Part-aware motion tokenization supplies structured sign representations to a shared language model, which is then adapted for both mapping directions and prompted task use.</p></div>
+      <figure class="method-figure">
+        <img src="signgpt-method.png" width="2074" height="1192" loading="lazy" alt="The three training stages of SignGPT: PHVQ tokenization, bidirectional task pre-training, and instruction fine-tuning">
+        <figcaption><strong>Figure 2. Overview of SignGPT's three training stages.</strong> (1) PHVQ discretizes continuous body and hand motion, with an optional text-alignment objective; (2) GHMLM is jointly trained on SLG and SLT and uses AMTP to decode text or part-aware motion tokens; and (3) instruction fine-tuning supports prompted translation and generation.</figcaption>
       </figure>
+      <div class="stage-grid">
+        <article class="stage-card"><span>01</span><h3>Part-aware tokenization</h3><p>PHVQ models a body-face stream and two hand streams, using body-to-hand conditioning and bidirectional multiscale temporal encoding.</p></article>
+        <article class="stage-card"><span>02</span><h3>Bidirectional joint training</h3><p>GHMLM reuses PHVQ features as motion embeddings and predicts either text or synchronized part-aware motion tokens from shared hidden states.</p></article>
+        <article class="stage-card"><span>03</span><h3>Instruction fine-tuning</h3><p>Progressive LoRA-based training equips each dataset-specific model to follow prompted sign-to-text and text-to-sign instructions.</p></article>
+      </div>
+    </section>
+
+    <section class="content-section" id="results">
+      <div class="content-heading"><span class="content-kicker">Experiments</span><h2>Benchmark results on DGS and ASL</h2><p>We evaluate generation with dynamic time warping joint-position error and translation with BLEU-4 and ROUGE-L on PHOENIX14T and How2Sign.</p></div>
+      <div class="results-stack">
+        <article class="result-card">
+          <h3>Table 1. Sign language generation (SLG) on PHOENIX14T and How2Sign</h3>
+          <p>SignGPT's part-aware representation substantially reduces aggregate DTW-JPE relative to the matched MotionGPT<sup>*</sup> adaptation. The optional text-space alignment variant gives small additional gains.</p>
+          <div class="table-scroll"><table class="result-table" aria-label="Sign language generation benchmark results">
+            <thead><tr><th rowspan="2">Method</th><th rowspan="2">Bi-T</th><th rowspan="2">Gloss</th><th colspan="2">Input</th><th colspan="3">PHOENIX14T · DTW ↓</th><th colspan="3">How2Sign · DTW ↓</th></tr><tr><th>Pose</th><th>RGB</th><th>Body</th><th>Hand</th><th>Avg</th><th>Body</th><th>Hand</th><th>Avg</th></tr></thead>
+            <tbody>
+              <tr><td>MotionGPT<sup>*</sup></td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>8.97</td><td>10.14</td><td>9.45</td><td>9.43</td><td>10.96</td><td>9.82</td></tr>
+              <tr><td>SOKE</td><td>—</td><td>—</td><td>✓</td><td>—</td><td><strong>2.58</strong></td><td>5.89</td><td><strong>4.26</strong></td><td>7.92</td><td><strong>3.07</strong></td><td>5.49</td></tr>
+              <tr><td>T2S-GPT</td><td>—</td><td>—</td><td>✓</td><td>—</td><td>7.32</td><td>9.86</td><td>8.28</td><td>7.15</td><td>11.21</td><td>8.49</td></tr>
+              <tr><td>MoMask</td><td>—</td><td>—</td><td>✓</td><td>—</td><td>3.55</td><td>6.75</td><td>5.38</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>NSA</td><td>—</td><td>—</td><td>✓</td><td>—</td><td>3.09</td><td>6.80</td><td>5.41</td><td>7.83</td><td>7.33</td><td>7.44</td></tr>
+              <tr class="ours"><td>SignGPT+TSA</td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>3.31</td><td><strong>4.98</strong></td><td>4.32</td><td><strong>4.98</strong></td><td>4.11</td><td><strong>4.76</strong></td></tr>
+              <tr class="ours"><td>SignGPT</td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>3.35</td><td>5.07</td><td>4.36</td><td>5.05</td><td>4.18</td><td>4.82</td></tr>
+            </tbody>
+          </table></div>
+          <p class="table-note">Bi-T denotes support for both directions in one dataset-specific model. Bold marks the best listed value. TSA is the optional text-space alignment objective. <sup>*</sup>MotionGPT is retrained with matched sign-language data, pose representation, backbone, and training budgets.</p>
+        </article>
+
+        <article class="result-card">
+          <h3>Table 2. Sign language translation (SLT) on PHOENIX14T and How2Sign</h3>
+          <p>SignGPT remains gloss-free and bidirectional while achieving the strongest listed How2Sign translation scores. PHOENIX14T comparisons include methods with different input modalities and task-specific priors.</p>
+          <div class="table-scroll"><table class="result-table" aria-label="Sign language translation benchmark results">
+            <thead><tr><th rowspan="2">Method</th><th rowspan="2">Bi-T</th><th rowspan="2">Gloss</th><th colspan="2">Input</th><th colspan="4">PHOENIX14T · Dev / Test</th><th colspan="2">How2Sign · Test</th></tr><tr><th>Pose</th><th>RGB</th><th>Dev B4 ↑</th><th>Dev R ↑</th><th>Test B4 ↑</th><th>Test R ↑</th><th>B4 ↑</th><th>R ↑</th></tr></thead>
+            <tbody>
+              <tr><td>MotionGPT<sup>*</sup></td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>11.53</td><td>27.14</td><td>10.98</td><td>27.05</td><td>8.72</td><td>28.61</td></tr>
+              <tr><td>SLTCC</td><td>—</td><td>—</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>11.8</td><td>31.1</td></tr>
+              <tr><td>SLT</td><td>—</td><td>✓</td><td>—</td><td>✓</td><td>20.69</td><td>45.54</td><td>20.17</td><td>45.34</td><td>—</td><td>—</td></tr>
+              <tr><td>CSGCR</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>15.08</td><td>38.96</td><td>15.18</td><td>38.85</td><td>—</td><td>—</td></tr>
+              <tr><td>Uni-Sign</td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td><td>14.9</td><td>36.0</td></tr>
+              <tr><td>SignLLM</td><td>—</td><td>—</td><td>—</td><td>✓</td><td><strong>25.25</strong></td><td>47.23</td><td>23.40</td><td>44.49</td><td>—</td><td>—</td></tr>
+              <tr><td>MixSignGraph</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>24.87</td><td><strong>51.71</strong></td><td><strong>24.02</strong></td><td><strong>51.14</strong></td><td>10.41</td><td>28.01</td></tr>
+              <tr class="ours"><td>SignGPT+TSA</td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>24.17</td><td>42.96</td><td>23.56</td><td>42.13</td><td><strong>16.77</strong></td><td><strong>38.25</strong></td></tr>
+              <tr class="ours"><td>SignGPT</td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>23.58</td><td>41.72</td><td>22.95</td><td>41.28</td><td>16.42</td><td>37.69</td></tr>
+            </tbody>
+          </table></div>
+          <p class="table-note">B4 denotes BLEU-4 and R denotes ROUGE-L. Bold marks the best listed value. Non-SignGPT baselines are transcribed from their cited source studies; input modality and training objectives vary across methods.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section" id="study">
+      <div class="content-heading"><span class="content-kicker">Exploratory User Study</span><h2>How Deaf ASL signers rated one-turn responses</h2><p>We separately evaluate whether each response plausibly answers the signed question and whether its frame-to-frame motion is smooth.</p></div>
+      <div class="study-highlight">
+        <div class="study-stats">
+          <div class="stat"><strong>12</strong><span>Deaf ASL users, ages 20–30</span></div>
+          <div class="stat"><strong>1,000</strong><span>How2Sign question samples</span></div>
+          <div class="stat"><strong>3</strong><span>Different raters per sample</span></div>
+          <div class="stat"><strong>12,000</strong><span>Total scalar ratings</span></div>
+        </div>
+        <article class="result-card">
+          <h3>Table 4. End-to-end response relevance and exploratory subjective ratings for the single-turn ASL response pipeline</h3>
+          <p>System labels were concealed and response order was randomized. Each output was rated independently on response appropriateness and motion smoothness.</p>
+          <div class="table-scroll"><table class="result-table compact" aria-label="End-to-end response relevance and user study ratings">
+            <thead><tr><th rowspan="2">Method</th><th rowspan="2">Response relevance<br>LLM-AR (%) ↑</th><th colspan="2">Subjective pilot · 1–5</th></tr><tr><th>Response appropriateness ↑</th><th>Motion smoothness ↑</th></tr></thead>
+            <tbody><tr><td>MotionGPT<sup>*</sup></td><td>15.7</td><td>2.71</td><td>1.26</td></tr><tr class="ours"><td>SignGPT</td><td><strong>52.2</strong></td><td><strong>3.67</strong></td><td><strong>4.35</strong></td></tr></tbody>
+          </table></div>
+          <p class="table-note">LLM-AR is the percentage of 1,000 outputs judged relevant by GPT-4o after shared frozen SLT back-translation. Each subjective mean summarizes 1,000 three-rater sample averages (3,000 raw ratings per system and item).</p>
+        </article>
+        <p class="study-copy">SignGPT's mean motion-smoothness rating (4.35) is higher than its response-appropriateness rating (3.67), indicating that temporal coherence was perceived more strongly than semantic appropriateness. The results are descriptive rather than population-level estimates, and a 52.2% relevance rate still leaves substantial room for improvement.</p>
+      </div>
+
+      <div class="survey-grid">
+        <article class="survey-card"><h3>Participants and allocation</h3><p>Participants reported at least 10 years of ASL use and completed the remote study during a one-month window. Each participant received 250 samples. Every selected question was assigned to exactly three different participants, yielding 3,000 participant-sample assignments.</p><h3>Participant-facing instructions</h3><blockquote class="study-quote">View the signed question and two rendered signed responses, then rate each response separately. For response appropriateness, focus on whether the response plausibly answers the question and ignore rendering artifacts. For motion smoothness, focus only on temporal continuity and ignore semantic correctness.</blockquote></article>
+        <article class="survey-card"><h3>Item-level rating questions</h3><p>No preference question was used; both responses were rated independently on both items.</p><div class="scale-list"><div class="scale-item"><strong>Response appropriateness</strong><span>1: no recognizable relation · 2: mostly unrelated · 3: partially related or ambiguous · 4: clearly related and mostly answers · 5: clearly and properly responds.</span></div><div class="scale-item"><strong>Motion smoothness</strong><span>1: severe jitter or broken motion · 2: frequent jitter or disrupted transitions · 3: some noticeable jitter but generally continuous · 4: mostly smooth with minor artifacts · 5: coherent with no perceptible jitter.</span></div></div><p>Each participant completed 250 trials, covering 500 response outputs and 1,000 scalar ratings.</p></article>
+      </div>
     </section>
 
     <section class="demo-section" id="slg">
       <div class="section-heading"><div class="section-index">01</div><div><h2>Sign Language Generation</h2><p>Given one shared prompt, compare the ground-truth sign, MotionGPT<sup>*</sup> output, and SignGPT output. Facial parameters are also included in the visualization. Videos use a common frame clock; a shorter sequence holds on its final frame until the longest sequence finishes.<span class="model-note"><sup>*</sup> Adapted model.</span></p></div></div>
       <div class="demo-panel">
-        <div class="panel-top"><div class="sample-tabs" id="slg-tabs" role="tablist" aria-label="SLG cases"></div><span class="case-badge success" id="slg-badge">Successful case</span></div>
+        <div class="panel-top"><div class="sample-tabs" id="slg-tabs" role="tablist" aria-label="SLG cases"></div></div>
         <div class="prompt"><span class="prompt-label">Prompt text</span><span id="slg-prompt"></span></div>
         <div class="video-grid" id="slg-videos">
           <article class="media-card"><div class="media-title"><span>Ground Truth</span></div><video muted playsinline preload="metadata" data-method="gt" aria-label="Ground-truth sign"></video><span class="hold-flag">Last frame held</span></article>
@@ -201,7 +339,7 @@ body{margin:0;background:#f7faf9;color:#102326}
     <section class="demo-section" id="slt">
       <div class="section-heading"><div class="section-index">02</div><div><h2>Sign Language Translation</h2><p>One sign input is translated by three targets. Meaning-preserving words and paraphrases are shown in green; only meaning-changing errors are highlighted in red.</p></div></div>
       <div class="demo-panel">
-        <div class="panel-top"><div class="sample-tabs" id="slt-tabs" role="tablist" aria-label="SLT cases"></div><div class="legend"><span><i class="green"></i>Semantically consistent</span><span><i class="red"></i>Meaning-changing error</span><span class="case-badge success" id="slt-badge">Successful case</span></div></div>
+        <div class="panel-top"><div class="sample-tabs" id="slt-tabs" role="tablist" aria-label="SLT cases"></div><div class="legend"><span><i class="green"></i>Semantically consistent</span><span><i class="red"></i>Meaning-changing error</span></div></div>
         <div class="slt-layout">
           <article class="motion-view"><div class="media-title"><span>Sign motion</span><small>Input</small></div><video id="slt-motion" muted playsinline loop controls preload="metadata" aria-label="Sign input"></video></article>
           <div class="transcripts">
@@ -238,38 +376,32 @@ body{margin:0;background:#f7faf9;color:#102326}
     </section>
 
   </div>
-  <footer class="footer">Anonymous submission · Interactive qualitative results · No author or affiliation information is collected</footer>
+  <footer class="footer">SignGPT · Translation · Generation · Sign language interaction</footer>
 </main>
 
 <script>
 const SLG_DATA=[
-  {name:"Case 01",outcome:"success",fps:20,fallbackFrames:100,prompt:"well heres a gourmet approach to raw foods.",videos:{gt:"./slg_dcN7W0lxTpE_49-8-rgb_front_gt.mp4",base:"./slg_dcN7W0lxTpE_49-8-rgb_front_base.mp4",signgpt:"./slg_dcN7W0lxTpE_49-8-rgb_front_signgpt.mp4"}},
-  {name:"Case 02",outcome:"success",fps:20,fallbackFrames:100,prompt:"and that essentially is a normal lens for this enlarger.",videos:{gt:"./slg_5z_z6opEIH0_3-3-rgb_front_gt.mp4",base:"./slg_5z_z6opEIH0_3-3-rgb_front_base.mp4",signgpt:"./slg_5z_z6opEIH0_3-3-rgb_front_signgpt.mp4"}},
-  {name:"Case 03",outcome:"success",fps:20,fallbackFrames:300,prompt:"It works right away and it will actually kill all of the fleas that are on the dog for the next twenty four hours and it start working in about thirty minutes.",videos:{gt:"./slg_-00cp1iGiDw_12-5-rgb_front_gt.mp4",base:"./slg_-00cp1iGiDw_12-5-rgb_front_base.mp4",signgpt:"./slg_-00cp1iGiDw_12-5-rgb_front_signgpt.mp4"}},
-  {name:"Case 04",outcome:"success",fps:20,fallbackFrames:240,prompt:"Now, it's not always easy but if you practice this for a while eventually you should be able to do it without too much trouble.",videos:{gt:"./slg_1yckSw3bsVs_5-8-rgb_front_gt.mp4",base:"./slg_1yckSw3bsVs_5-8-rgb_front_base.mp4",signgpt:"./slg_1yckSw3bsVs_5-8-rgb_front_signgpt.mp4"}},
-  {name:"Failure 01",outcome:"failure",fps:20,fallbackFrames:420,prompt:"The dogs typically like to eat them they are flavored so they chew them right up and what this does is it prevents the production of cottin so if a flea jumps on your dog bites your dog and ingest the blood meal then the blood meal would have the chemical ingredients of the sentinel when they lay there eggs they would not be able to produce cottin.",videos:{gt:"./slg_-00cp1iGiDw_8-5-rgb_front_gt.mp4",base:"./slg_-00cp1iGiDw_8-5-rgb_front_base.mp4",signgpt:"./slg_-00cp1iGiDw_8-5-rgb_front_signgpt.mp4"}},
-  {name:"Failure 02",outcome:"failure",fps:20,fallbackFrames:300,prompt:"You don't want to have all those TV's and DVDs players and phones and it's very important not to have your alarm clock and phone right by your head so that I see quite often.",videos:{gt:"./slg_1wtSe0nk5Tk_7-8-rgb_front_gt.mp4",base:"./slg_1wtSe0nk5Tk_7-8-rgb_front_base.mp4",signgpt:"./slg_1wtSe0nk5Tk_7-8-rgb_front_signgpt.mp4"}}
+  {name:"Case 01",fps:20,fallbackFrames:100,prompt:"well heres a gourmet approach to raw foods.",videos:{gt:"./slg_dcN7W0lxTpE_49-8-rgb_front_gt.mp4",base:"./slg_dcN7W0lxTpE_49-8-rgb_front_base.mp4",signgpt:"./slg_dcN7W0lxTpE_49-8-rgb_front_signgpt.mp4"}},
+  {name:"Case 02",fps:20,fallbackFrames:100,prompt:"and that essentially is a normal lens for this enlarger.",videos:{gt:"./slg_5z_z6opEIH0_3-3-rgb_front_gt.mp4",base:"./slg_5z_z6opEIH0_3-3-rgb_front_base.mp4",signgpt:"./slg_5z_z6opEIH0_3-3-rgb_front_signgpt.mp4"}},
+  {name:"Case 03",fps:20,fallbackFrames:300,prompt:"It works right away and it will actually kill all of the fleas that are on the dog for the next twenty four hours and it start working in about thirty minutes.",videos:{gt:"./slg_-00cp1iGiDw_12-5-rgb_front_gt.mp4",base:"./slg_-00cp1iGiDw_12-5-rgb_front_base.mp4",signgpt:"./slg_-00cp1iGiDw_12-5-rgb_front_signgpt.mp4"}},
+  {name:"Case 04",fps:20,fallbackFrames:240,prompt:"Now, it's not always easy but if you practice this for a while eventually you should be able to do it without too much trouble.",videos:{gt:"./slg_1yckSw3bsVs_5-8-rgb_front_gt.mp4",base:"./slg_1yckSw3bsVs_5-8-rgb_front_base.mp4",signgpt:"./slg_1yckSw3bsVs_5-8-rgb_front_signgpt.mp4"}}
 ];
 
 const SLT_DATA=[
-  {name:"Case 01",outcome:"success",motion:"./slt_-dyT7rtkAMk_7-5-rgb_front_motion.mp4",texts:{gt:"theres going to be a section of time where youre way out of your comfort zone.",base:"theres going to be a section when youre out of the conversation.",signgpt:"theres going to be a time where youre way outside your comfort zone."},errors:{base:["conversation"],signgpt:[]}},
-  {name:"Case 02",outcome:"success",motion:"./slt_dcN7W0lxTpE_36-8-rgb_front_motion.mp4",texts:{gt:"we dont want to contribute more dampness by eating a lot of raw foods.",base:"we dont want to contribute more damage by eating.",signgpt:"we dont want to cause more dampness by eating too many raw foods."},errors:{base:["damage"],signgpt:[]}},
-  {name:"Case 03",outcome:"success",motion:"./slt_1xKU91ggLeI_0-5-rgb_front_motion.mp4",texts:{gt:"Have you woken up the next day, pounding headache, dry mouth, realized it may have been the amount of drink you had last night?",base:"When you wake up early the next morning, drink plenty of water and prepare something healthy for breakfast.",signgpt:"Have you woken up the next morning with a pounding headache and a dry mouth, and realized it might have been from how much you drank the night before?"},errors:{base:["drink","plenty","water","prepare","healthy","breakfast"],signgpt:[]}},
-  {name:"Case 04",outcome:"success",motion:"./slt_5wmHJ2neRQQ_3-5-rgb_front_motion.mp4",texts:{gt:"Well, if I hit this ball straight down the middle of the fairway, and the wind is going from right to left, it's going to blow it possibly into the left side of the fair way, or the left rough.",base:"If the player stands in the middle and hits the ball to the right, it will roll back toward the green and stop beside the hole.",signgpt:"If I hit the ball straight down the middle of the fairway and the wind blows from right to left, it could carry the ball to the left side of the fairway or into the left rough."},errors:{base:["player","right","roll","green","stop","beside","hole"],signgpt:[]}},
-  {name:"Failure 01",outcome:"failure",motion:"./slt_1yvskpdZCPs_12_13_14-8-rgb_front_motion.mp4",texts:{gt:"You want to really protect that neck. So looking forward, contracting those abs. Perform about eight to ten reps. And that is your double leg stretch.",base:"Relax your shoulders and breathe slowly.",signgpt:"Keep your back on the floor and slowly move your arms while holding both legs together."},errors:{base:["relax","shoulders","breathe","slowly"],signgpt:["back","floor","slowly","move","arms","holding","legs","together"]}},
-  {name:"Failure 02",outcome:"failure",motion:"./slt_-00cp1iGiDw_13-5-rgb_front_motion.mp4",texts:{gt:"So if you taken your dog to a place or a friends house or to a training school and you believe that there are fleas there and your dog may have gotten fleas this is a great product to use when you are about to leave before you bring your dog to your home.",base:"If your dog has been outside, wash its feet carefully and keep it away from the furniture until its coat is completely dry.",signgpt:"Before visiting your friend, make sure you bring enough food and water for the trip and leave the remaining supplies at home."},errors:{base:["outside","wash","feet","furniture","coat","dry"],signgpt:["visiting","food","water","trip","supplies"]}}
+  {name:"Case 01",motion:"./slt_-dyT7rtkAMk_7-5-rgb_front_motion.mp4",texts:{gt:"theres going to be a section of time where youre way out of your comfort zone.",base:"theres going to be a section when youre out of the conversation.",signgpt:"theres going to be a time where youre way outside your comfort zone."},errors:{base:["conversation"],signgpt:[]}},
+  {name:"Case 02",motion:"./slt_dcN7W0lxTpE_36-8-rgb_front_motion.mp4",texts:{gt:"we dont want to contribute more dampness by eating a lot of raw foods.",base:"we dont want to contribute more damage by eating.",signgpt:"we dont want to cause more dampness by eating too many raw foods."},errors:{base:["damage"],signgpt:[]}},
+  {name:"Case 03",motion:"./slt_1xKU91ggLeI_0-5-rgb_front_motion.mp4",texts:{gt:"Have you woken up the next day, pounding headache, dry mouth, realized it may have been the amount of drink you had last night?",base:"When you wake up early the next morning, drink plenty of water and prepare something healthy for breakfast.",signgpt:"Have you woken up the next morning with a pounding headache and a dry mouth, and realized it might have been from how much you drank the night before?"},errors:{base:["drink","plenty","water","prepare","healthy","breakfast"],signgpt:[]}},
+  {name:"Case 04",motion:"./slt_5wmHJ2neRQQ_3-5-rgb_front_motion.mp4",texts:{gt:"Well, if I hit this ball straight down the middle of the fairway, and the wind is going from right to left, it's going to blow it possibly into the left side of the fair way, or the left rough.",base:"If the player stands in the middle and hits the ball to the right, it will roll back toward the green and stop beside the hole.",signgpt:"If I hit the ball straight down the middle of the fairway and the wind blows from right to left, it could carry the ball to the left side of the fairway or into the left rough."},errors:{base:["player","right","roll","green","stop","beside","hole"],signgpt:[]}}
 ];
 
 const SLC_DATA=[
-  {name:"Dialogue 01",outcome:"success",inputMotion:"./slc_e5HYroYJ9pk_3-8-rgb_front_input.mp4",gtQuestion:"What is perception?",base:{question:"What is perception?",answer:"Perception is the way you think and feel about things, people, places, and ideas. To become successful interpersonal communicators—which is what we all strive for—we must learn to improve our perception.",backTranslation:"Communication depends on speaking clearly and giving other people enough time to express their opinions.",outputMotion:"./slc_e5HYroYJ9pk_3-8-rgb_front_base-output.mp4"},signgpt:{question:"What is perception?",answer:"Perception is the way you think and feel about things, people, places, and ideas. To become successful interpersonal communicators—which is what we all strive for—we must learn to improve our perception.",backTranslation:"Perception is how you think and feel about objects, people, places, and ideas. To be successful interpersonal communicators, which is something we all aim for, we need to improve our perception.",outputMotion:"./slc_e5HYroYJ9pk_3-8-rgb_front_signgpt-output.mp4"}},
-  {name:"Dialogue 02",outcome:"success",inputMotion:"./slc_1yvskpdZCPs_10-8-rgb_front_input.mp4",gtQuestion:"Now, where do you want to look?",base:{question:"Now, where do you want to look?",answer:"I want you to look toward your legs and avoid looking up at the ceiling.",backTranslation:"Keep your arms straight and slowly raise both hands above your head.",outputMotion:"./slc_1yvskpdZCPs_10-8-rgb_front_base-output.mp4"},signgpt:{question:"Now, where do you want to look?",answer:"I want you to look toward your legs and avoid looking up at the ceiling.",backTranslation:"I want you to look down toward your legs instead of looking up at the ceiling.",outputMotion:"./slc_1yvskpdZCPs_10-8-rgb_front_signgpt-output.mp4"}},
-  {name:"Failure",outcome:"failure",inputMotion:"./slc_eJIeFdrw4hM_2-8-rgb_front_input.mp4",gtQuestion:"Well you say, how can I learn two hundred students’ names, or more?",base:{question:"Well you say, how can I learn two hundred students’ names, or more?",answer:"Well, there’s some several things that you could do.",backTranslation:"Practice.",outputMotion:"./slc_eJIeFdrw4hM_2-8-rgb_front_base-output.mp4"},signgpt:{question:"Well you say, how can I learn two hundred students’ names, or more?",answer:"Well, there’s some several things that you could do.",backTranslation:"You can ask them again.",outputMotion:"./slc_eJIeFdrw4hM_2-8-rgb_front_signgpt-output.mp4"}}
+  {name:"Dialogue 01",inputMotion:"./slc_e5HYroYJ9pk_3-8-rgb_front_input.mp4",gtQuestion:"What is perception?",base:{question:"What is perception?",answer:"Perception is the way you think and feel about things, people, places, and ideas. To become successful interpersonal communicators—which is what we all strive for—we must learn to improve our perception.",backTranslation:"Communication depends on speaking clearly and giving other people enough time to express their opinions.",outputMotion:"./slc_e5HYroYJ9pk_3-8-rgb_front_base-output.mp4"},signgpt:{question:"What is perception?",answer:"Perception is the way you think and feel about things, people, places, and ideas. To become successful interpersonal communicators—which is what we all strive for—we must learn to improve our perception.",backTranslation:"Perception is how you think and feel about objects, people, places, and ideas. To be successful interpersonal communicators, which is something we all aim for, we need to improve our perception.",outputMotion:"./slc_e5HYroYJ9pk_3-8-rgb_front_signgpt-output.mp4"}},
+  {name:"Dialogue 02",inputMotion:"./slc_1yvskpdZCPs_10-8-rgb_front_input.mp4",gtQuestion:"Now, where do you want to look?",base:{question:"Now, where do you want to look?",answer:"I want you to look toward your legs and avoid looking up at the ceiling.",backTranslation:"Keep your arms straight and slowly raise both hands above your head.",outputMotion:"./slc_1yvskpdZCPs_10-8-rgb_front_base-output.mp4"},signgpt:{question:"Now, where do you want to look?",answer:"I want you to look toward your legs and avoid looking up at the ceiling.",backTranslation:"I want you to look down toward your legs instead of looking up at the ceiling.",outputMotion:"./slc_1yvskpdZCPs_10-8-rgb_front_signgpt-output.mp4"}}
 ];
 
 (function initProjectPage(){
   const setVideo=(video,path)=>{video.pause();video.removeAttribute('src');video.removeAttribute('poster');video.src=path;video.load()};
-  const setOutcomeBadge=(element,outcome)=>{const failed=outcome==='failure';element.className='case-badge '+(failed?'failure':'success');element.textContent=failed?'Failure case':'Successful case'};
-  const buildTabs=(container,data,onSelect)=>{data.forEach((item,index)=>{const button=document.createElement('button');button.type='button';button.className='sample-tab '+(item.outcome==='failure'?'failure':'');button.textContent=item.name;button.setAttribute('role','tab');button.setAttribute('aria-selected',index===0?'true':'false');button.addEventListener('click',()=>{[...container.children].forEach((tab,i)=>{tab.classList.toggle('active',i===index);tab.setAttribute('aria-selected',i===index?'true':'false')});onSelect(index)});if(index===0)button.classList.add('active');container.appendChild(button)})};
+  const buildTabs=(container,data,onSelect)=>{data.forEach((item,index)=>{const button=document.createElement('button');button.type='button';button.className='sample-tab';button.textContent=item.name;button.setAttribute('role','tab');button.setAttribute('aria-selected',index===0?'true':'false');button.addEventListener('click',()=>{[...container.children].forEach((tab,i)=>{tab.classList.toggle('active',i===index);tab.setAttribute('aria-selected',i===index?'true':'false')});onSelect(index)});if(index===0)button.classList.add('active');container.appendChild(button)})};
 
   class FrameAlignedPlayer{
     constructor(videos,seek,readout,playButton){
@@ -288,7 +420,7 @@ const SLC_DATA=[
 
   const slgVideos=[...document.querySelectorAll('#slg-videos video')];
   const slgPlayer=new FrameAlignedPlayer(slgVideos,document.getElementById('slg-seek'),document.getElementById('slg-time'),document.getElementById('slg-play'));
-  const loadSLG=index=>{const item=SLG_DATA[index];document.getElementById('slg-prompt').textContent=item.prompt;setOutcomeBadge(document.getElementById('slg-badge'),item.outcome);slgPlayer.load(item)};
+  const loadSLG=index=>{const item=SLG_DATA[index];document.getElementById('slg-prompt').textContent=item.prompt;slgPlayer.load(item)};
   buildTabs(document.getElementById('slg-tabs'),SLG_DATA,loadSLG);
   document.getElementById('slg-play').addEventListener('click',()=>slgPlayer.play());
   document.getElementById('slg-reset').addEventListener('click',()=>slgPlayer.seekTo(0));
@@ -301,7 +433,7 @@ const SLC_DATA=[
   const normalize=token=>token.toLocaleLowerCase().replace(/[“”‘’]/g,'');
   const isPunctuation=token=>/^[^\p{L}\p{N}]+$/u.test(token);
   const renderText=(element,text,errorTokens=[])=>{element.replaceChildren();const tokens=tokenize(text),errors=new Set(errorTokens.map(normalize));tokens.forEach((token,index)=>{if(index&&!isPunctuation(token))element.append(' ');const span=document.createElement('span');span.className='token '+(!isPunctuation(token)&&errors.has(normalize(token))?'wrong':'correct');span.textContent=token;element.appendChild(span)})};
-  const loadSLT=index=>{const item=SLT_DATA[index];setOutcomeBadge(document.getElementById('slt-badge'),item.outcome);setVideo(document.getElementById('slt-motion'),item.motion);renderText(document.getElementById('slt-gt'),item.texts.gt);renderText(document.getElementById('slt-base'),item.texts.base,item.errors.base);renderText(document.getElementById('slt-signgpt'),item.texts.signgpt,item.errors.signgpt)};
+  const loadSLT=index=>{const item=SLT_DATA[index];setVideo(document.getElementById('slt-motion'),item.motion);renderText(document.getElementById('slt-gt'),item.texts.gt);renderText(document.getElementById('slt-base'),item.texts.base,item.errors.base);renderText(document.getElementById('slt-signgpt'),item.texts.signgpt,item.errors.signgpt)};
   buildTabs(document.getElementById('slt-tabs'),SLT_DATA,loadSLT);loadSLT(0);
 
   const pipeline=document.getElementById('slc-pipeline'),pipelineStatus=document.getElementById('slc-status');
