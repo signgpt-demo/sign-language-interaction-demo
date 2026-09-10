@@ -225,7 +225,7 @@ body{margin:0;background:#f7faf9;color:#102326}
         <p>Large language models (LLMs) offer limited support for sign languages, which constrains interaction through signing. We present SignGPT, a unified, pose-based framework for sign language translation and generation, and further explore a sign-to-sign conversational response pipeline. SignGPT couples hierarchical representations of body, hand, and facial motion with a shared language model that produces both text and motion without relying on gloss annotations. Asymmetric multi-token prediction and progressive training together enable bidirectional, multitask interaction. We evaluate SignGPT on How2Sign (American Sign Language, ASL) and PHOENIX14T (German Sign Language, DGS) through quantitative and qualitative analyses as well as ablation studies. An exploratory study with 12 Deaf ASL signers provides descriptive ratings of response appropriateness and motion smoothness. Our findings surface both the opportunities and the limitations of pose-based, LLM-mediated sign language interaction, and provide a foundation for developing and studying conversational interfaces that support sign languages.</p>
         <figure class="teaser-figure">
           <img src="signgpt-overview.png" width="1652" height="577" loading="eager" alt="SignGPT translation, generation, and one-turn sign-to-sign response pipeline">
-          <figcaption><strong>SignGPT overview.</strong> SignGPT unifies sign-to-text translation and text-to-sign generation in a single model, and we further demonstrate how these complementary capabilities enable a sign-to-sign response pipeline.</figcaption>
+          <figcaption><strong>SignGPT overview.</strong> A central SignGPT model connects translation and generation. On the left, a text instruction is converted into a sequence of signing avatars. In the middle, an input signing sequence is translated into text. On the right, a signed question is translated, answered in English, and converted into a signed response, illustrating the one-turn response pipeline.</figcaption>
         </figure>
       </article>
     </section>
@@ -266,8 +266,8 @@ body{margin:0;background:#f7faf9;color:#102326}
               <tr><td>T2S-GPT</td><td>—</td><td>—</td><td>✓</td><td>—</td><td>7.32</td><td>9.86</td><td>8.28</td><td>7.15</td><td>11.21</td><td>8.49</td></tr>
               <tr><td>MoMask</td><td>—</td><td>—</td><td>✓</td><td>—</td><td>3.55</td><td>6.75</td><td>5.38</td><td>—</td><td>—</td><td>—</td></tr>
               <tr><td>NSA</td><td>—</td><td>—</td><td>✓</td><td>—</td><td>3.09</td><td>6.80</td><td>5.41</td><td>7.83</td><td>7.33</td><td>7.44</td></tr>
-              <tr class="ours"><td>SignGPT+TSA</td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>3.31</td><td><strong>4.98</strong></td><td>4.32</td><td><strong>4.98</strong></td><td>4.11</td><td><strong>4.76</strong></td></tr>
-              <tr class="ours"><td>SignGPT</td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>3.35</td><td>5.07</td><td>4.36</td><td>5.05</td><td>4.18</td><td>4.82</td></tr>
+              <tr class="ours"><td>SignGPT+TSA (Ours)</td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>3.31</td><td><strong>4.98</strong></td><td>4.32</td><td><strong>4.98</strong></td><td>4.11</td><td><strong>4.76</strong></td></tr>
+              <tr class="ours"><td>SignGPT (Ours)</td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>3.35</td><td>5.07</td><td>4.36</td><td>5.05</td><td>4.18</td><td>4.82</td></tr>
             </tbody>
           </table></div>
           <p class="table-note">Bi-T denotes support for both directions in one dataset-specific model. Bold marks the best listed value. TSA is the optional text-space alignment objective. <sup>*</sup>MotionGPT is retrained with matched sign-language data, pose representation, backbone, and training budgets.</p>
@@ -286,8 +286,8 @@ body{margin:0;background:#f7faf9;color:#102326}
               <tr><td>Uni-Sign</td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td><td>14.9</td><td>36.0</td></tr>
               <tr><td>SignLLM</td><td>—</td><td>—</td><td>—</td><td>✓</td><td><strong>25.25</strong></td><td>47.23</td><td>23.40</td><td>44.49</td><td>—</td><td>—</td></tr>
               <tr><td>MixSignGraph</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>24.87</td><td><strong>51.71</strong></td><td><strong>24.02</strong></td><td><strong>51.14</strong></td><td>10.41</td><td>28.01</td></tr>
-              <tr class="ours"><td>SignGPT+TSA</td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>24.17</td><td>42.96</td><td>23.56</td><td>42.13</td><td><strong>16.77</strong></td><td><strong>38.25</strong></td></tr>
-              <tr class="ours"><td>SignGPT</td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>23.58</td><td>41.72</td><td>22.95</td><td>41.28</td><td>16.42</td><td>37.69</td></tr>
+              <tr class="ours"><td>SignGPT+TSA (Ours)</td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>24.17</td><td>42.96</td><td>23.56</td><td>42.13</td><td><strong>16.77</strong></td><td><strong>38.25</strong></td></tr>
+              <tr class="ours"><td>SignGPT (Ours)</td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>23.58</td><td>41.72</td><td>22.95</td><td>41.28</td><td>16.42</td><td>37.69</td></tr>
             </tbody>
           </table></div>
           <p class="table-note">B4 denotes BLEU-4 and R denotes ROUGE-L. Bold marks the best listed value. Non-SignGPT baselines are transcribed from their cited source studies; input modality and training objectives vary across methods.</p>
@@ -309,7 +309,7 @@ body{margin:0;background:#f7faf9;color:#102326}
           <p>System labels were concealed and response order was randomized. Each output was rated independently on response appropriateness and motion smoothness.</p>
           <div class="table-scroll"><table class="result-table compact" aria-label="End-to-end response relevance and user study ratings">
             <thead><tr><th rowspan="2">Method</th><th rowspan="2">Response relevance<br>LLM-AR (%) ↑</th><th colspan="2">Subjective pilot · 1–5</th></tr><tr><th>Response appropriateness ↑</th><th>Motion smoothness ↑</th></tr></thead>
-            <tbody><tr><td>MotionGPT<sup>*</sup></td><td>15.7</td><td>2.71</td><td>1.26</td></tr><tr class="ours"><td>SignGPT</td><td><strong>52.2</strong></td><td><strong>3.67</strong></td><td><strong>4.35</strong></td></tr></tbody>
+            <tbody><tr><td>MotionGPT<sup>*</sup></td><td>15.7</td><td>2.71</td><td>1.26</td></tr><tr class="ours"><td>SignGPT (Ours)</td><td><strong>52.2</strong></td><td><strong>3.67</strong></td><td><strong>4.35</strong></td></tr></tbody>
           </table></div>
           <p class="table-note">LLM-AR is the percentage of 1,000 outputs judged relevant by GPT-4o after shared frozen SLT back-translation. Each subjective mean summarizes 1,000 three-rater sample averages (3,000 raw ratings per system and item).</p>
         </article>
